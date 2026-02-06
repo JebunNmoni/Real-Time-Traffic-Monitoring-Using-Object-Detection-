@@ -1,0 +1,51 @@
+traffic_monitoring/
+├── main.py
+├── requirements.txt
+├── setup.py
+├── config/
+│   ├── config.yaml
+│   ├── classes.txt
+│   └── dataset.yaml
+├── src/
+│   ├── __init__.py
+│   ├── data_preparation.py
+│   ├── detection/
+│   │   ├── __init__.py
+│   │   ├── detector.py
+│   │   ├── model_trainer.py
+│   │   └── tensorrt_optimizer.py
+│   ├── tracking/
+│   │   ├── __init__.py
+│   │   ├── byte_tracker.py
+│   │   ├── vehicle_tracker.py
+│   │   └── reid_engine.py
+│   ├── gui/
+│   │   ├── __init__.py
+│   │   ├── main_window.py
+│   │   ├── video_stream.py
+│   │   ├── control_panel.py
+│   │   └── metrics_dashboard.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── annotations.py
+│       ├── video_processor.py
+│       └── performance_monitor.py
+├── models/
+│   ├── yolov8n.pt
+│   └── yolov8n_tensorrt.engine
+├── data/
+│   ├── images/
+│   │   ├── train/
+│   │   ├── val/
+│   │   └── test/
+│   ├── videos/
+│   │   ├── input/
+│   │   └── processed/
+│   └── labels/
+├── scripts/
+│   ├── split_dataset.py
+│   ├── train_model.py
+│   └── export_model.py
+└── tests/
+    ├── test_detection.py
+    └── test_tracking.py

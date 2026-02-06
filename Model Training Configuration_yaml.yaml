@@ -1,0 +1,72 @@
+# config/training_config.yaml
+# Model Training Configuration
+
+data:
+  dataset_yaml: "data/dataset/dataset.yaml"
+  cache: true
+  fraction: 1.0
+  rectangular_training: false
+  
+model:
+  pretrained: true
+  input_size: 640
+  single_class: false
+  overlap_mask: true
+  mask_ratio: 4
+  
+training:
+  epochs: 100
+  batch_size: 16
+  workers: 8
+  device: "cuda"  # or "cpu"
+  patience: 50
+  learning_rate: 0.01
+  final_lr_factor: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  label_smoothing: 0.0
+  nominal_batch_size: 64
+  save_period: -1
+  project: "runs/train"
+  name: "traffic_monitor"
+  exist_ok: false
+  resume: false
+  mixed_precision: true
+  optimizer: "SGD"
+  seed: 42
+  deterministic: true
+  cosine_lr: false
+  
+loss:
+  box_loss_weight: 7.5
+  cls_loss_weight: 0.5
+  dfl_loss_weight: 1.5
+  
+augmentation:
+  enabled: true
+  hsv_hue: 0.015
+  hsv_saturation: 0.7
+  hsv_value: 0.4
+  rotation: 0.0
+  translation: 0.1
+  scale: 0.5
+  shear: 0.0
+  perspective: 0.0
+  flip_vertical: 0.0
+  flip_horizontal: 0.5
+  mosaic: 1.0
+  mixup: 0.0
+  copy_paste: 0.0
+  close_mosaic: 10
+  
+export:
+  formats: ["onnx", "engine", "torchscript"]
+  half_precision: true
+  workspace_size: 4  # GB
+  simplify: true
+  opset_version: 12
+  batch_size: 1
+  dynamic_axes: false

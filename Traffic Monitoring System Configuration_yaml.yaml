@@ -1,0 +1,61 @@
+# config/config.yaml
+# Traffic Monitoring System Configuration
+
+model:
+  path: "models/yolov8n_traffic.pt"
+  classes: "config/classes.txt"
+  input_size: [640, 640]
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+  max_detections: 100
+  
+detection:
+  enabled: true
+  use_gpu: true
+  half_precision: true
+  
+tracking:
+  enabled: true
+  algorithm: "byte_track"
+  track_thresh: 0.5
+  match_thresh: 0.8
+  max_age: 30
+  min_hits: 3
+  use_reid: true
+  reid_threshold: 0.7
+  
+optimization:
+  use_tensorrt: true
+  tensorrt_engine: "models/yolov8n_traffic.engine"
+  use_onnxruntime: false
+  onnx_model: "models/yolov8n_traffic.onnx"
+  use_fp16: true
+  
+gui:
+  window_size: [1600, 900]
+  theme: "dark"
+  update_interval: 30  # ms
+  show_fps: true
+  show_metrics: true
+  record_path: "./recordings/"
+  snapshot_path: "./snapshots/"
+  
+video:
+  source: 0  # 0 for webcam, or path to video file
+  output_codec: "mp4v"
+  output_fps: 30
+  save_annotated: true
+  
+logging:
+  level: "INFO"
+  file: "logs/traffic_monitor.log"
+  console: true
+  
+performance:
+  monitor_interval: 1000  # ms
+  log_metrics: true
+  alert_thresholds:
+    fps: 15
+    cpu: 80
+    memory: 85
+    gpu: 90

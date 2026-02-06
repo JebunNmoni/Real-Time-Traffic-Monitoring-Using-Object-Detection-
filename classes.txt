@@ -1,0 +1,11 @@
+Auto Rickshaw
+BUS
+CNG/Tempo
+Cycle rickshaw
+Jeep/SUV
+Microbus
+Minibus
+Motorcycle
+Private Sedan Car
+Trailer
+Truck

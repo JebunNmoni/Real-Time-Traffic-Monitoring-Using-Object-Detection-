@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "Auto Rickshaw"
+    },
+    {
+      "id": 1,
+      "name": "BUS"
+    },
+    {
+      "id": 2,
+      "name": "CNG\/Tempo"
+    },
+    {
+      "id": 3,
+      "name": "Cycle rickshaw"
+    },
+    {
+      "id": 4,
+      "name": "Jeep\/SUV"
+    },
+    {
+      "id": 5,
+      "name": "Microbus"
+    },
+    {
+      "id": 6,
+      "name": "Minibus"
+    },
+    {
+      "id": 7,
+      "name": "Motorcycle"
+    },
+    {
+      "id": 8,
+      "name": "Private Sedan Car"
+    },
+    {
+      "id": 9,
+      "name": "Trailer"
+    },
+    {
+      "id": 10,
+      "name": "Truck"
+    }
+  ],
+  "info": {
+    "year": 2026,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}
